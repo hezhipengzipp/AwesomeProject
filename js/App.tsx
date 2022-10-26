@@ -99,21 +99,10 @@ const App = ({navigation}) => {
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
-          <TouchableNativeFeedback
-            onPress={() =>
-              navigation.navigate('Details', {
-                itemId: 86,
-                otherParam: 'anything you want here',
-              })
-            }
-            background={TouchableNativeFeedback.Ripple(
-              rippleColor,
-              rippleOverflow,
-            )}>
-            <View style={styles.touchable}>
-              <Text style={styles.text}>TouchableNativeFeedback</Text>
-            </View>
-          </TouchableNativeFeedback>
+          <Button
+            title="open detail"
+            onPress={() => navigation.navigate('Details')}
+          />
           <LearnMoreLinks />
         </View>
       </ScrollView>
