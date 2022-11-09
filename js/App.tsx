@@ -26,6 +26,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { Provider } from 'react-redux';
 const randomHexColor = () => {
   return '#000000'.replace(/0/g, function () {
     return (~~(Math.random() * 16)).toString(16);
@@ -73,6 +74,7 @@ const App = ({navigation}) => {
   };
 
   return (
+
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
@@ -101,7 +103,9 @@ const App = ({navigation}) => {
           </Section>
           <Button
             title="open detail"
-            onPress={() => navigation.navigate('Details')}
+            onPress={() => navigation.navigate('Details',{
+              name:"kankan"
+            })}
           />
           <LearnMoreLinks />
         </View>

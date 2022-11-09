@@ -1,10 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import {ActivityIndicator, Alert, FlatList, Text, View} from 'react-native';
-import {Button} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import React, {useEffect, useState} from 'react';
+import {ActivityIndicator, FlatList, Text, View} from 'react-native';
+
 const FetchDemo = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState(true);
+  let obj = {
+    p: ['Hello', {y: 'World'}],
+  };
+  let {
+    p,
+    p: [x, {y}],
+  } = obj;
+  console.log('FetchDemo:' + p);
+
+  let jsonData = {
+    id: 42,
+    status: 'OK',
+    data: [867, 5309],
+  };
+
+  let {id, status, data: num} = jsonData;
+
+  console.log(id, status, num);
+
   useEffect(() => {
     fetch('https://reactnative.dev/movies.json')
       .then(reponse => reponse.json())
